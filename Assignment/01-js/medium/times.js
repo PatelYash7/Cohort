@@ -9,5 +9,12 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    let n=0;
+    const time= new Date;
+    const start=time.getTime();
+    for (let i = 0; i < n; i++) {
+        n=n+i;
+    }
+    const end=time.getTime();
+    return end - start;
 }
