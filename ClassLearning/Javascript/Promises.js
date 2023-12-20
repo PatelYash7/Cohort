@@ -10,7 +10,7 @@ const PromiseOne =new Promise(function(resolve,reject){
 
     setTimeout(function(){
         console.log("Async Task COmpleted")
-        resolve() // this resolve method connects the promise and ".then" it is connected with then
+        resolve() // this resolve method connects the promise and ".then"    it is connected with then
     },3000)
 })
 
@@ -75,3 +75,32 @@ PromiseFour.then(function(user){
 }).finally(function(){  // THise is default case, it will run if promise is resolved or rejected
     console.log("Promise is either resolved or rejected")  
 })
+
+
+const PromiseFive =new Promise(function(resolve,reject){
+    //Async Task 
+
+    setTimeout(function(){
+        const error=false
+        const User={
+            name:"Javascript",
+            _id:22
+        }
+        if(!error){
+            resolve(User)
+        }else{
+            reject("Javascript error from asynce await")
+        }
+    },1000)
+})
+
+async function ConsumedPromise (){
+        try{
+            const response= await PromiseFive
+            console.log(response)
+        }catch(err){
+            console.log(err)
+        }
+
+}
+ConsumedPromise()
