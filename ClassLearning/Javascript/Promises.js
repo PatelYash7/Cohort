@@ -93,7 +93,6 @@ const PromiseFive =new Promise(function(resolve,reject){
         }
     },1000)
 })
-
 async function ConsumedPromise (){
         try{
             const response= await PromiseFive
