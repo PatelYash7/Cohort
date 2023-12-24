@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calculate() {
+        const a = document.getElementById("ab").value;
+        const ab = document.getElementById("abc").value;
+        const element= document.getElementById("finalSum");
+        console.log(element)
+        element.innerHTML=parseInt(a)+parseInt(ab)
+    }
+</script>
+<body>
+    <input id="ab" type="text" placeholder="Firstnumber">
+    <br>
+    <br>
+    <input id="abc"type="text" placeholder="secondnumber">
+    <br> <br>
+    <button onclick="calculate()">calculate</button>
+    <div id="finalSum"></div>
+</body>
+</html>
