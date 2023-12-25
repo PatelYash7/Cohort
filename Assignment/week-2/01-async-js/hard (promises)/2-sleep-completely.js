@@ -5,6 +5,19 @@
  */
 
 function sleep(milliseconds) {
+    const prom = new Promise(function(resolve,reject){
+        setTimeout(() => {
+            resolve("Resolved after given milliseconds");
+        }, milliseconds);
+    })
+    return prom
 }
 
+async function hell(){
+    console.log('start time')
+    const data= await sleep(5000);
+    console.log(data)
+    console.log('End time')
+}
+hell();
 module.exports = sleep;

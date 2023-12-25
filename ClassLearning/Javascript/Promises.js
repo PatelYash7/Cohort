@@ -4,7 +4,7 @@
 
 
 //Creating a Promise 
-
+;
 const PromiseOne =new Promise(function(resolve,reject){
     //Async Task 
 
