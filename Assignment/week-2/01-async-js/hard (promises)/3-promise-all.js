@@ -31,17 +31,15 @@ function wait3(t) {
     return prom
 }
 
-function calculateTime(t1, t2, t3) {
-    const start = Date.now;
-    const prom = Promise.all([wait1(t1),wait2(t2),wait3(t3)]).then(()=>{
-        const end = Date.now;
-        const total = end -start;
-        return total;
-    })
-    return prom;
+async function calculateTime(t1, t2, t3) {
+    const start = new Date().getTime();
+    await Promise.all([wait1(t1),wait2(t2),wait3(t3)]);
+    const end = new Date().getTime();
+    const total=end-start;
+    console.log(total/1000);
+
 }
-calculateTime(1000,2000,3000).then((data)=>{
-    console.log(data);
-})
+calculateTime(1000,2000,3000);
+
 
 module.exports = calculateTime;
