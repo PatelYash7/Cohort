@@ -14,10 +14,11 @@ function sleep(milliseconds) {
 }
 
 async function hell(){
-    console.log('start time')
+    const start = new Date().getTime();
     const data= await sleep(5000);
     console.log(data)
-    console.log('End time')
+    const end = new Date().getTime();
+    console.log((end-start)/1000);
 }
 hell();
 module.exports = sleep;

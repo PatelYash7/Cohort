@@ -7,16 +7,16 @@ function format(date){
    hours = hours<12 ? '0'+hours : hours;
    minutes = minutes<10 ? '0'+minutes : minutes;
    seconds = seconds<10 ? '0'+seconds : seconds;
-  return `${hours}:${minutes}:${seconds} ${meridiem}`
+   return `${hours}:${minutes}:${seconds} ${meridiem}`
 }
 
 
-function timeDedeBhai(){
+function timeCalculate(){
     const currenTime = new Date();
-    const time = format(currenTime);
+    const time = format(currenTime); 
 
     console.log(time)
 }
 
 
-setInterval(timeDedeBhai , 1000)
+setInterval(timeCalculate , 1000)
