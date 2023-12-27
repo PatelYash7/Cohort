@@ -16,6 +16,56 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const port =3000;
 
+function fileContent(filename) {
+  return new Promise((resolve, reject)=>{
+    fs.readFile(filename,"utf-8",(err,data)=>{
+      if(!err){
+        resolve(data)
+      }else {
+        reject(err)
+      }
+    })
+  })
+}
+
+function fileList(filename){
+  return new Promise((resolve,reject)=>{
+    fs.readdir(filename,(err,data)=>{
+      if(!err){
+        resolve(data)
+      }else{
+        reject(err)
+      }
+    })
+  })
+}
+
+app.get('/files',(req,res)=>{
+  const filename = path.join(__dirname,'/files');
+  fileList(filename).then((data)=>{
+    res.send(data);
+  }).catch((err)=>{
+    res.status(500).json({error:"Failed to Retrieve files List"});
+  })
+})
+
+app.get('/files/:filename',(req,res)=>{
+  const filename = path.join(__dirname,'/files',req.params.filename);
+  fileContent(filename).then((data)=>{
+    res.send(data);
+  }).catch((err)=>{
+    res.status(404).send("Data Not Found" + err);
+  })
+  
+})
+
+
+
+
+app.listen(port,()=>{
+  console.log("Listening on port 3000")
+})
 
 module.exports = app;
