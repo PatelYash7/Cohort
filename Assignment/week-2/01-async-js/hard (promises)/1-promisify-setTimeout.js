@@ -5,15 +5,15 @@
 function wait(n) {
     const Resolved =new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve("Promise Resolved")
-        },n)
+            resolve()
+        },n*1000)
     })
     
     return Resolved
 
 }
-wait(3000).then((data)=>{
-    console.log(data);
+wait(3).then(()=>{
+    console.log("After 3 seconds");
 })
 
 module.exports = wait;
