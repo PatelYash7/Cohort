@@ -2,11 +2,19 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const[number,setNumber]=useState(0);
   return (
     <>
-      <h1>Hello world</h1>
+      <div>
+        <button onClick={()=>setNumber(number-1)}>
+          decrement
+        </button>
+        <p>{number}</p>
+        <button onClick={()=>setNumber(number+1)}>
+          Increment
+        </button>
+      </div>
     </>
   )
 }
