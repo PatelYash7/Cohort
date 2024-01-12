@@ -3,20 +3,16 @@ const app = express();
 const zod=require('zod');
 // const schema =zod.array(zod.number());
 const port=3000;
-
 const schema=zod.object({
     email:zod.string(),
     password:zod.string(),
     country: zod.literal("IN").or(zod.literal("US")) //county:"IN","US"
 })
-
 app.use(express.json());
-
 const logger=function(req,res,next){
     console.log("Logger")
     next();
 }
-
 // app.use(logger);
 app.get('/',(req,res)=>{
     res.send("Hello world")
