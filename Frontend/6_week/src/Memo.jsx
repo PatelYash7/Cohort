@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 function Memo() {
     const[num,setNum]=useState(0)
     const[text,setText]=useState(1)
-    let count =0 ;
-    for (let index = 1; index <= text ;index++) {
-        count=count+index
-    }
+
+
+    const count = useMemo(()=>{
+      let count = 0 ;
+      for (let index = 1; index <=100000000  ;index++) {
+          count=count+index
+      }
+      return count;
+    },[text])
   return (
     <div>
         <button onClick={function(){setNum(num+1)}}>{num}</button>
