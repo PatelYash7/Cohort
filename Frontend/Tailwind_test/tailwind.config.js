@@ -5,7 +5,13 @@ export default {
 	    "./index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        blue:{
+          'box':'#146EB4',
+        }
+      }
+    },
   },
   plugins: [],
 }

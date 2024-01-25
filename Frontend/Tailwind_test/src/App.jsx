@@ -3,11 +3,13 @@ import './App.css'
 import RevenueCard from './Components/RevenueCard'
 
 function App() {
-
   return (
-    <>
-      <RevenueCard title={"Amount Pending"} orderCount={24} amount={12156516.664} />
-    </>
+    <div className='grid grid-cols-4'>
+      <RevenueCard title={"Amount Pending"} orderCount={13} amount={"121,5678"} />
+      <RevenueCard title={"Amount Pending"} orderCount={13} amount={"121,5678"} />
+      <RevenueCard title={"Amount Pending"} orderCount={13} amount={"121,5678"} />
+      <RevenueCard title={"Amount Pending"} orderCount={13} amount={"121,5678"} />
+    </div>
   )
 }
 
