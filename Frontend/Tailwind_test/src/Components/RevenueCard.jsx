@@ -18,6 +18,9 @@ function RevenueCard(
             <div>
             {orderCount}
             </div>
+            <div>
+                hello
+            </div>
         </div>
     </div>
   )
