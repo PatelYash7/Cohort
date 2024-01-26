@@ -7,7 +7,7 @@ function RevenueCard(
         amount,
     }) {
   return (
-    <div className='bg-white shadow-md rounded p-4'>
+    <div className='bg-white shadow-md rounded p-4 hover:bg-blue-box hover:transition duration-500 transition hover:text-white    '>
         <div className='text-gray-700'>
             <div className='flex gap-2 items-center justify-start'>
                 <div className=' font-normal'>
@@ -18,7 +18,7 @@ function RevenueCard(
                 </svg>
             </div> 
         </div>
-        <div className='flex justify-between items-center pt-2'>
+        <div className='flex justify-between gap-4 items-center pt-2'>
             <div className=' text-4xl font-semibold'>
                 $ {amount}
             </div>
