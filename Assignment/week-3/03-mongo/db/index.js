@@ -1,29 +1,30 @@
 const mongoose = require('mongoose');
+const {Schema,model}=mongoose;
 
 // Connect to MongoDB
-mongoose.connect('your-mongodb-url');
+mongoose.connect('mongodb+srv://YashPatel:AeBoESyIRTTZECRK@testing.xc0jpsk.mongodb.net/Assignment');
 
 // Define schemas
-const AdminSchema = new mongoose.Schema({
+const AdminSchema = Schema({
 
     // Schema definition here
     username:String,
     password:String
 });
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = Schema({
     // Schema definition here
     username:String,
     password:String
 });
 
-const CourseSchema = new mongoose.Schema({
+const CourseSchema = Schema({
     // Schema definition here
 });
 
-const Admin = mongoose.model('Admin', AdminSchema);
-const User = mongoose.model('User', UserSchema);
-const Course = mongoose.model('Course', CourseSchema);
+const Admin = model('Admin', AdminSchema);
+const User = model('User', UserSchema);
+const Course = model('Course', CourseSchema);
 
 module.exports = {
     Admin,
