@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const {Schema,model}=mongoose;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://YashPatel:AeBoESyIRTTZECRK@testing.xc0jpsk.mongodb.net/Assignment');
+mongoose.connect('zzzzz');
 
 // Define schemas
 const AdminSchema = Schema({
