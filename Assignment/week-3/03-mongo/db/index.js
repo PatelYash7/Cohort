@@ -3,8 +3,6 @@ const {Schema,model,connect}=mongoose;
 // require('dotenv').config({path:'03-mongo/' + '.env' })
 require('dotenv').config({path:'../.env'})
 // const url= process.env.MONGO_URI;
-
-
 // connect(process.env.MONGO_URI)
 // Connect to MongoDB
 // async function connectDB(){
