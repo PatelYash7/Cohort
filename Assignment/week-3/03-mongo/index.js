@@ -1,12 +1,14 @@
 const express = require('express');
+// import { Express,express } from 'express';
 const bodyParser = require('body-parser');
 const app = express();
 const adminRouter = require("./routes/admin")
 const userRouter = require("./routes/user");
-require('dotenv').config();
+const {connect}= require("mongoose");
+require('dotenv').config({});
 
-console.log(process.env.MONGO_URI)
 // Middleware for parsing request bodies
+connect(process.env.MONGO_URI)
 app.use(bodyParser.json());
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)
