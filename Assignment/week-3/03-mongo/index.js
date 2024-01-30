@@ -5,10 +5,10 @@ const app = express();
 const adminRouter = require("./routes/admin")
 const userRouter = require("./routes/user");
 const {connect}= require("mongoose");
-require('dotenv').config({});
+const { MONGO_URI } = require('./config');
 
 // Middleware for parsing request bodies
-connect(process.env.MONGO_URI)
+connect(MONGO_URI)
 app.use(bodyParser.json());
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)

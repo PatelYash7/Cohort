@@ -1,21 +1,8 @@
 const mongoose = require('mongoose');
+const { MONGO_URI } = require('../config');
 const {Schema,model,connect}=mongoose;
-// require('dotenv').config({path:'03-mongo/' + '.env' })
-require('dotenv').config({path:'../.env'})
-// const url= process.env.MONGO_URI;
-// connect(process.env.MONGO_URI)
-// Connect to MongoDB
-// async function connectDB(){
-//     try {
-//         await connect(url);
-//         console.log("MongoDB Connected")
-//     } catch (error) {
-//         console.error(error.message);
-//         // Exit process with failure
-//         process.exit(1);
-//     }
-// }
 
+connect(MONGO_URI).then((e)=>console.log("Success")).catch(err => console.log(err));
 const AdminSchema = Schema({
 
     // Schema definition here

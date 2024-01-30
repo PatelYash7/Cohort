@@ -3,6 +3,7 @@ const router = Router();
 const userMiddleware = require("../middleware/user");
 const { User, Course } = require("../db");
 const { default: mongoose } = require("mongoose");
+const jwt = require("jsonwebtoken");
 
 // User Routes
 router.post('/signup', (req, res) => {
@@ -31,8 +32,9 @@ router.get('/courses', async (req, res) => {
 router.post('/courses/:courseId', userMiddleware, async(req, res) => {
     // Implement course purchase logic
     const courseId = req.params.courseId;
-    const username = req.headers.username;
-
+    const val = jwt.decode(req.headers.authorization)
+    const username = val.username;
+    
     await User.updateOne({
         username: username
     }, {
