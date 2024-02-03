@@ -2,7 +2,7 @@ import { Client } from 'pg'
 
  
 const client = new Client({
-  connectionString:"postgresql://yashpate0101:bY5h1qdwgMLV@ep-rough-cell-03216551.ap-southeast-1.aws.neon.tech/Test?sslmode=required"
+//   connectionString:""
 })
 
 async function createUser() {
