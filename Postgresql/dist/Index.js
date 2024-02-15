@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = require("pg");
 // const client = new Client({
-//   connectionString:"postgresql://yashpate0101:bY5h1qdwgMLV@ep-rough-cell-03216551.ap-southeast-1.aws.neon.tech/Test?sslmode=require"
+//   connectionString:"xx"
 // })
 // async function createUserTable(){
 //     await client.connect()
@@ -31,7 +31,7 @@ const pg_1 = require("pg");
 function insertData(username, email, password) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new pg_1.Client({
-            connectionString: "postgresql://yashpate0101:bY5h1qdwgMLV@ep-rough-cell-03216551.ap-southeast-1.aws.neon.tech/Test?sslmode=require"
+            connectionString: "xx"
         });
         try {
             yield client.connect(); // Ensure client connection is established
@@ -55,7 +55,7 @@ function insertData(username, email, password) {
 function getUser(email) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new pg_1.Client({
-            connectionString: "postgresql://yashpate0101:bY5h1qdwgMLV@ep-rough-cell-03216551.ap-southeast-1.aws.neon.tech/Test?sslmode=require"
+            connectionString: "xx"
         });
         try {
             yield client.connect(); // Ensure client connection is established
