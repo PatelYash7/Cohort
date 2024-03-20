@@ -1,14 +1,14 @@
 import { Client } from 'pg'
  
-// const client = new Client({
-//   connectionString:"xx"
-// })
+const client = new Client({
+  connectionString:"postgresql://postgres:mysecretpassword@localhost:5432/postgres?sslmode=disable"
+})
 
 
 // async function createUserTable(){
 //     await client.connect()
 //     const result = await client.query(
-//         `CREATE TABLE users (
+//         `CREATE TABLE users3 (
 //             id SERIAL PRIMARY KEY,
 //             username VARCHAR(50) UNIQUE NOT NULL,
 //             email VARCHAR(255) UNIQUE NOT NULL,
@@ -20,32 +20,30 @@ import { Client } from 'pg'
 // }
 // createUserTable();
 //Insert Data
-async function insertData(username: string, email: string, password: string) {
-    const client = new Client({
-        connectionString:"xx"
-    });
+// async function insertData(username: string, email: string, password: string) {
+//     const client = new Client({
+//         connectionString:"xx"
+//     });
   
-    try {
-      await client.connect(); // Ensure client connection is established
-      // Use parameterized query to prevent SQL injection
-      const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-      const values = [username, email, password];
-      const res = await client.query(insertQuery, values);
-      console.log('Insertion success:', res); // Output insertion result
-    } catch (err) {
-      console.error('Error during the insertion:', err);
-    } finally {
-      await client.end(); // Close the client connection
-    }
-  }
+//     try {
+//       await client.connect(); // Ensure client connection is established
+//       // Use parameterized query to prevent SQL injection
+//       const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+//       const values = [username, email, password];
+//       const res = await client.query(insertQuery, values);
+//       console.log('Insertion success:', res); // Output insertion result
+//     } catch (err) {
+//       console.error('Error during the insertion:', err);
+//     } finally {
+//       await client.end(); // Close the client connection
+//     }
+//   }
   
   // Example usage
 //   insertData('username5', 'yashpatel@example.com', 'user_password').catch(console.error);
 //GetUser
 async function getUser(email: string) {
-    const client = new Client({
-        connectionString:"xx"
-    });
+
   try {
     await client.connect(); // Ensure client connection is established
     const query = 'SELECT * FROM users WHERE email = $1';

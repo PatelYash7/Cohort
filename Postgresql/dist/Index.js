@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = require("pg");
-// const client = new Client({
-//   connectionString:"xx"
-// })
+const client = new pg_1.Client({
+    connectionString: "postgresql://postgres:mysecretpassword@localhost:5432/postgres?sslmode=disable"
+});
 // async function createUserTable(){
 //     await client.connect()
 //     const result = await client.query(
-//         `CREATE TABLE users (
+//         `CREATE TABLE users3 (
 //             id SERIAL PRIMARY KEY,
 //             username VARCHAR(50) UNIQUE NOT NULL,
 //             email VARCHAR(255) UNIQUE NOT NULL,
@@ -28,35 +28,28 @@ const pg_1 = require("pg");
 // }
 // createUserTable();
 //Insert Data
-function insertData(username, email, password) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const client = new pg_1.Client({
-            connectionString: "xx"
-        });
-        try {
-            yield client.connect(); // Ensure client connection is established
-            // Use parameterized query to prevent SQL injection
-            const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-            const values = [username, email, password];
-            const res = yield client.query(insertQuery, values);
-            console.log('Insertion success:', res); // Output insertion result
-        }
-        catch (err) {
-            console.error('Error during the insertion:', err);
-        }
-        finally {
-            yield client.end(); // Close the client connection
-        }
-    });
-}
+// async function insertData(username: string, email: string, password: string) {
+//     const client = new Client({
+//         connectionString:"xx"
+//     });
+//     try {
+//       await client.connect(); // Ensure client connection is established
+//       // Use parameterized query to prevent SQL injection
+//       const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+//       const values = [username, email, password];
+//       const res = await client.query(insertQuery, values);
+//       console.log('Insertion success:', res); // Output insertion result
+//     } catch (err) {
+//       console.error('Error during the insertion:', err);
+//     } finally {
+//       await client.end(); // Close the client connection
+//     }
+//   }
 // Example usage
 //   insertData('username5', 'yashpatel@example.com', 'user_password').catch(console.error);
 //GetUser
 function getUser(email) {
     return __awaiter(this, void 0, void 0, function* () {
-        const client = new pg_1.Client({
-            connectionString: "xx"
-        });
         try {
             yield client.connect(); // Ensure client connection is established
             const query = 'SELECT * FROM users WHERE email = $1';
