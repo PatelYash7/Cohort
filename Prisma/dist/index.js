@@ -29,4 +29,4 @@ function insertUser(email, password, firstname, lastname) {
         console.log(res);
     });
 }
-insertUser("test22@email.com", "password123", "John", "Doe");
+insertUser("test2fsafafaFSDADFASd2@email.com", "password123fds", "John", "Doe");
